@@ -158,8 +158,12 @@ public class EmailAuthenticatorForm extends AbstractUsernameFormAuthenticator {
             throw new AuthenticationFlowException(AuthenticationFlowError.INVALID_USER);
         }
 
+        // Prepare email body attributes by adding user details and code
+        String firstName = (user.getFirstName() != null && !user.getFirstName().isBlank()) ? user.getFirstName() : user.getUsername();
+
         Map<String, Object> mailBodyAttributes = new HashMap<>();
         mailBodyAttributes.put("username", user.getUsername());
+        mailBodyAttributes.put("firstName", firstName);
         mailBodyAttributes.put("code", code);
         mailBodyAttributes.put("ttl", ttl);
 

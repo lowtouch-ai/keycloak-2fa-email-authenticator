@@ -1,4 +1,4 @@
-Dear ${username},
+Dear ${firstName},
 
 To ensure the security of your lowtouch.ai account, we’ve sent you a one-time 6-digit code as part of our Multi-Factor Authentication (MFA) process.
 
